@@ -29,4 +29,10 @@ function handleBtn(event){
    var formatChoice = event.target 
 
 }
+function favTutorial() {
+    format.forEach(element => {
+        var item = document.createElement("option")
+        item.text = element[i]
+    });
+}
 submitEl.addEventListener("click", handleSubmit());

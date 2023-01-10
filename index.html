@@ -19,14 +19,34 @@
 
       <form>
         <div class="mb-3">
-       
-          <input type="text" class="form-control" id="searchText" placeholder="Search" />
+          <input
+            type="text"
+            class="form-control"
+            id="searchText"
+            placeholder="Search"
+          />
 
-          <select id="selectFormat" class="form-select">
-            <option>Select a format...</option>
+          <select
+            id="selectFormat"
+            class="form-select"
+            
+          >
+            <option data-number="1">Select a format...</option>
+            <option data-number="2">Maps</option>
+            <option data-number="3">Audio</option>
+            <option data-number="4">Photos</option>
+            <option data-number="5">Manuscripts</option>
+            <option data-number="6">Newspaper</option>
+            <option data-number="7">Film and Videos</option>
+            <option data-number="8"> Notated Music</option>
+            <option data-number="9">Websites</option>
+    
+
           </select>
         </div>
-        <button type="submit" id="submit" class="col-12 btn btn-primary">Click Me</button>
+        <button type="submit" id="submit" class="col-12 btn btn-primary">
+          Click Me
+        </button>
       </form>
     </div>
     <script src="./script.js"></script>
