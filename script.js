@@ -1,38 +1,48 @@
 var submitEl = document.querySelector("#submit");
 
-var requestUrl = "https://www.loc.gov/ " + "fo=json"
 
-var dropDown= document.querySelector("#selectFormat")
-var searchText= document.querySelector("#searchText")
-var format = ("maps", "audio", "photos", " manuscripts"," newspapers", "film-and-videos", "notated-music", "websites");
+var submit = document.querySelector("#submit")
+var searchText= document.querySelector("#form-select")
 
-var getFormat = function (user) {
-    var apiUrl = 'https://www.loc.gov/' + formatDropdown + '/?q=' + searchText + "fo=json";
-  
-    fetch(apiUrl)
-      .then(function (response) {
-        if (response.ok) {
-          response.json().then(function (data) {
-            displayRepos(data, user);
-          });
-        } else {
-          alert('Error: ' + response.statusText);
-        }
-      })
-      .catch(function (error) {
-        alert('Unable to connect to GitHub');
-      });
-  };
+submit.addEventListener("click", function(event) {
+  event.preventDefault();
 
-function handleBtn(event){
-   //On button click
-   var formatChoice = event.target 
+var formatInput = $('#selectFormat').val();
+var textInput = $('#searchText').val();
+var userSearch ='https://www.loc.gov/' + formatInput+ '/?q=' + textInput + '&fo=json';
 
-}
-function favTutorial() {
-    format.forEach(element => {
-        var item = document.createElement("option")
-        item.text = element[i]
+getFormat();
+console.log(formatInput);
+console.log(textInput);
+console.log(userSearch);
+
+function getFormat () {
+
+  fetch(userSearch)
+    .then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function () {
+
+
+console.log (subjects);
+        });
+
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('Unable to connect to GitHub');
     });
-}
-submitEl.addEventListener("click", handleSubmit());
+};
+
+
+}); 
+
+
+
+
+
+
+//submitEl.addEventListener("click", handleSubmit());
